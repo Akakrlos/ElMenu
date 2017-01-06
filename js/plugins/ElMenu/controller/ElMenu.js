@@ -69,7 +69,8 @@
     function goHome(){
         var currentMenu = $('.currentMenu');
         $(currentMenu).removeClass('currentMenu');
-        $(currentMenu).toggle( "fast", "linear",switchMenu(0) );
+        $(currentMenu).toggle();
+        switchMenu(0)
     }
 
     function _bind() {
@@ -100,7 +101,8 @@
             if( $(this).data('link').indexOf("@") > 0){
             var currentMenu = $('.currentMenu');
             $(currentMenu).removeClass('currentMenu');
-            $(currentMenu).toggle( "fast", "linear",switchMenu($(this).data('link').split('@')[1]) );
+            $(currentMenu).toggle();
+            switchMenu($(this).data('link').split('@')[1])
             } else {
                 document.location=$(this).data('link');
             }
