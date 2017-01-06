@@ -31,7 +31,7 @@
       },
       {
         "Id": 1,
-        "Name": "Sport Book",
+        "Name": "SportBook",
         "Link": "http://google.com",
         "Icon":"building-o"
       },
@@ -56,13 +56,13 @@
       },
       {
         "Id": 1,
-        "Name": "Cash Report",
+        "Name": "Cash",
         "Link": "Fisher",
         "Icon":"bar-chart"
       },
       {
         "Id": 2,
-        "Name": "Daily Report",
+        "Name": "Daily",
         "Link": "Norman",
         "Icon":"bar-chart"
       }
