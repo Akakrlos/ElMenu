@@ -3,6 +3,8 @@
     "Id": 0,
     "Name": "Main",
     "Parent": "9c94e273-6ddc-4431-b406-32daccb85148",
+    "tpl":"icon",
+    "Icon":"arrow-left",
     "Items": [
       {
         "Id": 0,
@@ -22,6 +24,8 @@
     "Id": 1,
     "Name": "Config",
     "Parent": "2e1bc613-6472-4e22-addb-4dff2ecc53f3",
+    "tpl":"icon",
+    "Icon":"arrow-left",
     "Items": [
       {
         "Id": 0,
@@ -47,6 +51,8 @@
     "Id": 2,
     "Name": "Reports",
     "Parent": "7157d0fd-81e3-45d9-801f-05938410b70d",
+    "tpl":"list",
+    "Icon":"bar-chart",
     "Items": [
       {
         "Id": 0,

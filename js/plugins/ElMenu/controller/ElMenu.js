@@ -9,18 +9,25 @@
         }, options );
         // Greenify the collection based on the settings variable.
     el=$(this);
-
+    esqueleto={};
     // AJAX //
     function getTemplateAjax() {
-        console.log(1);
             return $.ajax({
-                url: "/js/plugins/ElMenu/ElMenu.tpl.html",
+                url: "/js/plugins/ElMenu/views/ElMenu.tpl.html",
                 type: "get",
                 contentType: "text/html"
             });
         }
 
-        function getMenuAjax() {
+    function getTemplateListAjax() {
+            return $.ajax({
+                url: "/js/plugins/ElMenu/views/ElMenu-List.tpl.html",
+                type: "get",
+                contentType: "text/html"
+            });
+        }
+
+    function getMenuAjax() {
             return $.ajax({
                 url: "menu.json",
                 type: "get",
@@ -30,13 +37,33 @@
         }
     //------//
 
-    function renderTemplate(data) {
-            _.templateSettings.variable = "rc";
-            var template = _.template(
-                    $("script.ElMenu").html()
-            );
-            el.html(template(data));
+    function renderMenu() {
+            el.empty();
+            $.each( esqueleto, function( key, value ) {
+                
+                if(value.tpl=='icon'){
+                    renderTplIcon(value);
+                } else {
+                    renderTplList(value);
+                }
+            });
             attEvents()
+    }
+
+    function renderTplList(obj){
+        _.templateSettings.variable = "rc";
+            var templatex = _.template(
+                    $("script.elmenu-list").html()
+            );
+            el.append(templatex(obj));
+    }
+
+    function renderTplIcon(obj){
+         _.templateSettings.variable = "rc";
+            var template = _.template(
+                    $("script.elmenu-icon").html()
+         );
+         el.append(template(obj));
     }
 
     function goHome(){
@@ -46,19 +73,23 @@
     }
 
     function _bind() {
+        $(el).append('<div id="elmenu"></div>')
+        el=$('#elmenu');
+        getTemplateListAjax().done(function(tplList){
+            $("body").append(tplList)
+        });
         getTemplateAjax().done(function(tpl){
             $("body").append(tpl)
             getMenuAjax().done(function(data){
-                console.log(data)
-                renderTemplate(data);
-                
+                esqueleto=data
+                renderMenu();
             })
         })
 
         $(el).swipe({
-        swipeRight:function(event, direction, distance, duration, fingerCount) {
-           goHome();
-        }
+            swipeRight:function(event, direction, distance, duration, fingerCount) {
+            goHome();
+            }
         });
 
     }

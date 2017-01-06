@@ -1,8 +1,6 @@
-<script class="ElMenu">
-    <div class="elmenu" > 
-     <% _.each( rc, function( rItem ){  %>
-         <ul id="Menu_<%- rItem.Id  %>" class="<% if(rItem.Id!=0) { %>hide<%}%> <% if(rItem.Id==0) { %>currentMenu<%}%>" >
-         <% _.each( rItem.Items, function( rItemx ){ %>
+<script class="elmenu-icon">
+         <ul id="Menu_<%- rc.Id  %>" class="<% if(rc.Id!=0) { %>hide<%}%> <% if(rc.Id==0) { %>currentMenu<%}%>" >
+         <% _.each( rc.Items, function( rItemx ){ %>
               <li>
               <div class="menuItem" data-link="<%- rItemx.Link %>">
                 <div class="menuItemIcon"><i class="fa fa-<%-rItemx.Icon%> fa-3x"></i></div>
@@ -11,6 +9,4 @@
               </li>
          <% }); %>
           </ul>
-    <% }); %>
-    </div>
 </script>
