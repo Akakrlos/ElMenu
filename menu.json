@@ -1,0 +1,71 @@
+[
+  {
+    "Id": 0,
+    "Name": "Main",
+    "Parent": "9c94e273-6ddc-4431-b406-32daccb85148",
+    "Items": [
+      {
+        "Id": 0,
+        "Name": "Config",
+        "Link": "menu@1",
+        "Icon":"sliders"
+      },
+      {
+        "Id": 1,
+        "Name": "Reports",
+        "Link": "menu@2",
+        "Icon":"bar-chart"
+      }
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Config",
+    "Parent": "2e1bc613-6472-4e22-addb-4dff2ecc53f3",
+    "Items": [
+      {
+        "Id": 0,
+        "Name": "Home",
+        "Link": "menu@0",
+        "Icon":"arrow-left"
+      },
+      {
+        "Id": 1,
+        "Name": "Sport Book",
+        "Link": "http://google.com",
+        "Icon":"building-o"
+      },
+      {
+        "Id": 2,
+        "Name": "Terminals",
+        "Link": "http://google.com",
+        "Icon":"mobile"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Reports",
+    "Parent": "7157d0fd-81e3-45d9-801f-05938410b70d",
+    "Items": [
+      {
+        "Id": 0,
+        "Name": "Home",
+        "Link": "menu@0",
+        "Icon":"arrow-left"
+      },
+      {
+        "Id": 1,
+        "Name": "Cash Report",
+        "Link": "Fisher",
+        "Icon":"bar-chart"
+      },
+      {
+        "Id": 2,
+        "Name": "Daily Report",
+        "Link": "Norman",
+        "Icon":"bar-chart"
+      }
+    ]
+  }
+]
