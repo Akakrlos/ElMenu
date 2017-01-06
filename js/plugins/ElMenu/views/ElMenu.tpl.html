@@ -1,5 +1,5 @@
 <script class="elmenu-icon">
-         <ul id="Menu_<%- rc.Id  %>" class="<% if(rc.Id!=0) { %>hide<%}%> <% if(rc.Id==0) { %>currentMenu<%}%>" >
+         <ul id="Menu_<%- rc.Id  %>" data-name="<%- rc.Name  %>" data-id="<%- rc.Id  %>" class="<% if(rc.Id!=0) { %>hide<%}%> <% if(rc.Id==0) { %>currentMenu<%}%>" >
          <% _.each( rc.Items, function( rItemx ){ %>
               <li>
               <div class="menuItem menuItemClick" data-link="<%- rItemx.Link %>">

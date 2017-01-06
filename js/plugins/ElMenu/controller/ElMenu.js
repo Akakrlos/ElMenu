@@ -9,6 +9,7 @@
         }, options );
         // Greenify the collection based on the settings variable.
     el=$(this);
+    var history=[];
     esqueleto={};
     // AJAX //
     function getTemplateAjax() {
@@ -91,10 +92,24 @@
 
         $(el).swipe({
             swipeRight:function(event, direction, distance, duration, fingerCount) {
-            goHome();
+            goBack();
             }
         });
 
+    }
+
+    function goBack(){
+        if(history.length > 0){
+            var currentMenu = $('.currentMenu');
+            $(currentMenu).removeClass('currentMenu');
+            $(currentMenu).toggle();
+            var start=history.length-1;
+            console.log(history);
+            console.log("index:"+start);
+            console.log("Menu:"+(history[start]).id)
+            switchMenu(history[start].id)
+            history.splice(start);
+        }
     }
 
     function attEvents(){
@@ -102,6 +117,8 @@
             console.log($(this).data('link').indexOf("@"));
             if( $(this).data('link').indexOf("@") > 0){
             var currentMenu = $('.currentMenu');
+            var objh = {id:$(currentMenu).data('id'),name:$(currentMenu).data('name'),idx:history.length}
+            history.push(objh);
             $(currentMenu).removeClass('currentMenu');
             $(currentMenu).toggle();
             switchMenu($(this).data('link').split('@')[1])
@@ -122,6 +139,9 @@
             },
             goTo: function (link) {
                 _goTo();
+            },
+            history: function (link) {
+                return history;
             }
     }
     };
@@ -129,9 +149,9 @@
 
 $(document).ready(function(){
    
-   $ElMenuObj = $("elmenu").ElMenu({
+   $elmenuobj = $("elmenu").ElMenu({
             color: "#556b2f",
             backgroundColor: "white"
         });
-   $ElMenuObj.bind();
+   $elmenuobj.bind();
 })
