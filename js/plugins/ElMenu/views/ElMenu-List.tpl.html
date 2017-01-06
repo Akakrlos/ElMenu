@@ -1,8 +1,12 @@
 <script class="elmenu-list">
          <div id="Menu_<%- rc.Id  %>" class="MenuListcontainer <% if(rc.Id!=0) { %>hide<%}%> <% if(rc.Id==0) { %>currentMenu<%}%>">
          <div class="listViewTitle" >
-         <i class="fa fa-<%-rc.Icon %> fa-3x"></i><br>
-         <%- rc.Name  %>
+         <table>
+            <tr>
+                <td> <i class="fa fa-<%-rc.Icon %> fa-3x"></i></td>
+                <td><span class="listViewTitleText"><%- rc.Name  %></span></td>
+            </tr>
+        </table>
          </div>
          <ul  class="listView " >
          <% _.each( rc.Items, function( rItemx ){ %>

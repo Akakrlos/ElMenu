@@ -15,6 +15,7 @@
             return $.ajax({
                 url: "/js/plugins/ElMenu/views/ElMenu.tpl.html",
                 type: "get",
+                 cache: "false",
                 contentType: "text/html"
             });
         }
@@ -23,6 +24,7 @@
             return $.ajax({
                 url: "/js/plugins/ElMenu/views/ElMenu-List.tpl.html",
                 type: "get",
+                 cache: "false",
                 contentType: "text/html"
             });
         }
