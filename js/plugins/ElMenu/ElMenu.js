@@ -39,6 +39,12 @@
             attEvents()
     }
 
+    function goHome(){
+        var currentMenu = $('.currentMenu');
+        $(currentMenu).removeClass('currentMenu');
+        $(currentMenu).toggle( "fast", "linear",switchMenu(0) );
+    }
+
     function _bind() {
         getTemplateAjax().done(function(tpl){
             $("body").append(tpl)
@@ -48,6 +54,13 @@
                 
             })
         })
+
+        $(el).swipe({
+        swipeRight:function(event, direction, distance, duration, fingerCount) {
+           goHome();
+        }
+        });
+
     }
 
     function attEvents(){
