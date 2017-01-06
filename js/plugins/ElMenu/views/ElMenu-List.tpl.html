@@ -11,8 +11,8 @@
          <ul  class="listView " >
          <% _.each( rc.Items, function( rItemx ){ %>
               <li>
-               <div class="listViewItem menuItem">
-                <span class="menuItemList  menuItemListText" data-link="<%- rItemx.Link %>" ><%- rItemx.Name %></span>
+               <div class="listViewItem menuItemClick">
+                <span class="menuItemList menuItem menuItemListText" data-link="<%- rItemx.Link %>" ><%- rItemx.Name %></span>
                 </div>
               </li>
          <% }); %>

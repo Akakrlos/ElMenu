@@ -2,7 +2,7 @@
          <ul id="Menu_<%- rc.Id  %>" class="<% if(rc.Id!=0) { %>hide<%}%> <% if(rc.Id==0) { %>currentMenu<%}%>" >
          <% _.each( rc.Items, function( rItemx ){ %>
               <li>
-              <div class="menuItem" data-link="<%- rItemx.Link %>">
+              <div class="menuItem menuItemClick" data-link="<%- rItemx.Link %>">
                 <div class="menuItemIcon"><i class="fa fa-<%-rItemx.Icon%> fa-3x"></i></div>
                 <div class="menuItemName" ><%- rItemx.Name %><div>
               </div>

@@ -98,7 +98,7 @@
     }
 
     function attEvents(){
-        $('.menuItem').click(function(){
+        $('.menuItemClick').click(function(){
             console.log($(this).data('link').indexOf("@"));
             if( $(this).data('link').indexOf("@") > 0){
             var currentMenu = $('.currentMenu');
